@@ -47,16 +47,45 @@ const Products = ({ selectedCategory }) => {
         Products
       </Typography>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ width: "100%", overflowX: "hidden" }}>
         {/* {console.log(getPro)} */}
         {getPro.map((v, i) => {
           return (
-            <Grid item xs={12} sm={6} md={4} key={i}>
-              <Card>
-                <CardMedia component="img" height="100" image={v.images?.[0]} />
-                <CardContent>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              key={i}
+              sx={{ display: "flex", justifyContent: "flex-start" }}
+            >
+              <Card
+                sx={{
+                  width: "100%",
+                  maxWidth: 250,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={v.images?.[0]}
+                  sx={{ objectFit: "contain" }}
+                />
+                <CardContent sx={{ height: 120, overflow: "hidden" }}>
                   <Typography variant="h6">{v.title}</Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3, // number of lines to show
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
                     {v.description}
                   </Typography>
                 </CardContent>
