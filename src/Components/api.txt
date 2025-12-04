@@ -1,0 +1,5 @@
+CATAGORY LIST : 'https://dummyjson.com/products/category-list'
+
+GET ALL PRODUCTS : 'https://dummyjson.com/products'
+
+GET PRODUCTS BY CATAGORY : 'https://dummyjson.com/products/category/smartphones'
