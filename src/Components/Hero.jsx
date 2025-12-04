@@ -36,30 +36,39 @@ const Hero = () => {
       <Box
         sx={{
           display: "flex",
+          width: "100%",
           gap: 2,
           padding: 3,
-          width: "100%",
-          alignItems: "flex-start",
+          boxSizing: "border-box",
+          overflowX: "hidden",
         }}
       >
         <Paper
           elevation={3}
           sx={{
-            width: "30%",
-            minWidth: "250px",
+            width: { xs: "100%", lg: "30%" },
+            minWidth: { lg: 250 },
             padding: 2,
+            boxSizing: "border-box",
           }}
         >
           <CatagoryList setSelectedCategory={setSelectedCategory} />
         </Paper>
 
-        <Grid item xs={12} md={9}>
-          <Paper elevation={3} sx={{ padding: 2 }}>
+        <Box sx={{ flexGrow: 1, minWidth: 0 }}>
+          <Paper
+            elevation={3}
+            sx={{
+              padding: 2,
+              width: "100%",
+              boxSizing: "border-box",
+            }}
+          >
             <Products selectedCategory={selectedCategory} />
           </Paper>
-        </Grid>
+        </Box>
       </Box>
-    </>
+    </> 
   );
 };
 
